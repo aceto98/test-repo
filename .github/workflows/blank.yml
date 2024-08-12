@@ -32,9 +32,12 @@ jobs:
             cat env.dart
             echo $JSON_FILE > file.json
             cat file.json
+            echo $JSON > file1.son
+            cat file1.json
         env:
           ENV_DART: ${{ secrets.ENV_DART }}
-          JSON_FILE: ${{ secrets.JSON_FILE }}  
+          JSON_FILE: ${{ secrets.JSON_FILE }} 
+          JSON: ${{ vars.JSON }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
